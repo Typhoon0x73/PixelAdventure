@@ -116,6 +116,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Parts\Background\PixBackground.cpp" />
+    <ClCompile Include="Scene\Game\PixSceneGame.cpp" />
+    <ClCompile Include="Scene\PixScene.cpp" />
+    <ClCompile Include="Scene\Title\PixSceneTitle.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -325,6 +329,15 @@
     <Xml Include="App\example\xml\test.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Common\PixCommon.h" />
+    <ClInclude Include="Common\PixTextureDefine.h" />
+    <ClInclude Include="Parts\Background\PixBackground.h" />
+    <ClInclude Include="Scene\Game\PixSceneGame.h" />
+    <ClInclude Include="Scene\PixScene.h" />
+    <ClInclude Include="Scene\PixSceneData.h" />
+    <ClInclude Include="Scene\PixSceneDefine.h" />
+    <ClInclude Include="Scene\Select\PixSceneSelect.h" />
+    <ClInclude Include="Scene\Title\PixSceneTitle.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
