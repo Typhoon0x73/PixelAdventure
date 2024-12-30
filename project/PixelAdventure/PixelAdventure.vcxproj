@@ -331,7 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character\PixCharacter.h" />
-    <ClInclude Include="Common\AnimationInfo.h" />
+    <ClInclude Include="Common\PixAnimationInfo.h" />
     <ClInclude Include="Common\PixCommon.h" />
     <ClInclude Include="Common\PixTextureDefine.h" />
     <ClInclude Include="Parts\Background\PixBackground.h" />

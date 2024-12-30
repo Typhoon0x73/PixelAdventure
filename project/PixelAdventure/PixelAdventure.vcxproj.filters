@@ -854,7 +854,7 @@
     <ClInclude Include="Character\PixCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\AnimationInfo.h">
+    <ClInclude Include="Common\PixAnimationInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
