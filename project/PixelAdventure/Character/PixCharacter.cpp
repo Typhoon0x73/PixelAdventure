@@ -70,6 +70,12 @@ namespace pix
 
 	void Character::draw() const
 	{
+		const auto& animationInfo = AnimationInfoTable.at(m_state);
+		const auto& animationPattern = animationInfo.patterns[m_animPatternIndex];
+		const auto& characterInfo = std::find_if(std::begin(CharacterInfoTable), std::end(CharacterInfoTable), [this](const auto& info) {});
+		const char32_t* textureKey = TextureFileInfos[FromEnum(characterInfo->texturenKindBegin) + FromEnum(m_state)].assetKey;
+		const auto& texture = TextureAsset(textureKey);
+		texture(animationPattern.srcRect).drawAt(m_centerPos);
 	}
 
 	const RectF Character::getHitRect() const
