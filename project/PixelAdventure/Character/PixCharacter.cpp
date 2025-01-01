@@ -52,11 +52,17 @@ namespace pix
 		if (m_animTimer < animTime.count())
 		{
 			m_animPatternIndex++;
-			if (static_cast<int32>(std::size(animationInfo.patterns)) <= m_animPatternIndex)
+			m_animTimer = 0.0;
+			int32 patternCount = static_cast<int32>(std::size(animationInfo.patterns));
+			if (patternCount <= m_animPatternIndex)
 			{
 				if (animationInfo.isLoop)
 				{
 					m_animPatternIndex = 0;
+				}
+				else
+				{
+					m_animPatternIndex = patternCount - 1;
 				}
 			}
 		}
