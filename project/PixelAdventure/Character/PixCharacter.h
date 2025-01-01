@@ -3,7 +3,7 @@
 #define PIX_CHARACTER_H_
 
 #include "../Common/PixCommon.h"
-#include "../Common/AnimationInfo.h"
+#include "../Common/PixAnimationInfo.h"
 
 namespace pix
 {
