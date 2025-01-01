@@ -1,6 +1,5 @@
 ﻿#include "PixCharacter.h"
 #include "../Common/PixTextureDefine.h"
-#include "../Common/PixAnimationInfo.h"
 
 namespace pix
 {
@@ -46,6 +45,21 @@ namespace pix
 
 	void Character::update()
 	{
+		const auto& animationInfo = AnimationInfoTable.at(m_state);
+		const auto& animationPattern = animationInfo.patterns[m_animPatternIndex];
+		const auto& animTime = animationPattern.playTime;
+		m_animTimer += Scene::DeltaTime();
+		if (m_animTimer < animTime.count())
+		{
+			m_animPatternIndex++;
+			if (static_cast<int32>(std::size(animationInfo.patterns)) <= m_animPatternIndex)
+			{
+				if (animationInfo.isLoop)
+				{
+					m_animPatternIndex = 0;
+				}
+			}
+		}
 	}
 
 	void Character::draw() const
@@ -59,6 +73,13 @@ namespace pix
 
 	void Character::changeState(State state)
 	{
+		if (m_state == state)
+		{
+			return;
+		}
+		m_state = state;
+		m_animPatternIndex = 0;
+		m_animTimer = 0.0;
 	}
 
 }
