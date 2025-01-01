@@ -1,5 +1,6 @@
 ﻿#include "PixCharacter.h"
 #include "../Common/PixTextureDefine.h"
+#include "../Common/PixAnimationInfo.h"
 
 namespace pix
 {
