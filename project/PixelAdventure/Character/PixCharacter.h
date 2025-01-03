@@ -41,6 +41,7 @@ namespace pix
 		virtual void draw() const;
 
 		virtual const RectF getHitRect() const;
+		virtual void setCenterPos(const Vec2& centerPos);
 
 	protected:
 
@@ -49,6 +50,7 @@ namespace pix
 	protected:
 
 		State m_state;
+		Kind m_kind;
 
 		Texture m_dustParticleTexture;
 

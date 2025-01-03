@@ -7,6 +7,7 @@
 namespace pix
 {
 	class Background;
+	class Character;
 
 	class SceneGame : public Scene
 	{
@@ -26,6 +27,7 @@ namespace pix
 	protected:
 
 		std::unique_ptr<Background> m_pBackground;
+		std::unique_ptr<Character> m_pCharacter;
 	};
 }
 

@@ -32,6 +32,7 @@ namespace pix
 
 	Character::Character(Kind kind)
 		: m_state{ State::Appearing }
+		, m_kind{ kind }
 		, m_animPatternIndex{ 0 }
 		, m_animTimer{ 0.0 }
 		, m_centerPos{ 0.0, 0.0 }
@@ -49,7 +50,7 @@ namespace pix
 		const auto& animationPattern = animationInfo.patterns[m_animPatternIndex];
 		const auto& animTime = animationPattern.playTime;
 		m_animTimer += Scene::DeltaTime();
-		if (m_animTimer < animTime.count())
+		if (animTime.count() <= m_animTimer)
 		{
 			m_animPatternIndex++;
 			m_animTimer = 0.0;
@@ -63,6 +64,10 @@ namespace pix
 				else
 				{
 					m_animPatternIndex = patternCount - 1;
+					if (m_state == State::Appearing)
+					{
+						changeState(State::Fall);
+					}
 				}
 			}
 		}
@@ -72,7 +77,12 @@ namespace pix
 	{
 		const auto& animationInfo = AnimationInfoTable.at(m_state);
 		const auto& animationPattern = animationInfo.patterns[m_animPatternIndex];
-		const auto& characterInfo = std::find_if(std::begin(CharacterInfoTable), std::end(CharacterInfoTable), [this](const auto& info) {});
+		const auto& characterInfo = std::find_if(
+			std::begin(CharacterInfoTable), std::end(CharacterInfoTable),
+			[this](const auto& info) {
+				return m_kind == info.charaKind;
+			}
+		);
 		const char32_t* textureKey = TextureFileInfos[FromEnum(characterInfo->texturenKindBegin) + FromEnum(m_state)].assetKey;
 		const auto& texture = TextureAsset(textureKey);
 		texture(animationPattern.srcRect).drawAt(m_centerPos);
@@ -81,6 +91,11 @@ namespace pix
 	const RectF Character::getHitRect() const
 	{
 		return RectF();
+	}
+
+	void Character::setCenterPos(const Vec2& centerPos)
+	{
+		m_centerPos = centerPos;
 	}
 
 	void Character::changeState(State state)
