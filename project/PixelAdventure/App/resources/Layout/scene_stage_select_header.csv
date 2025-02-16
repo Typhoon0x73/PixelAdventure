@@ -1,6 +1,6 @@
 "65bd71144e","8QI9MoBnzNYAVo5cPoQN"
 "scene_stage_select_header"
-"layout_size",600,70
-"back",0,540,15,40,40
-"option",0,490,15,40,40
-"scene_title",0,10,10,465,50
+"layout_size",440,30
+"back",0,415,5,20,20
+"option",0,390,5,20,20
+"scene_title",0,5,5,380,20
