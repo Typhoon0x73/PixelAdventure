@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="sB1BTk0PU5gHplG_Dzg3" name="scene_title">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="480" pageHeight="240" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="480" pageHeight="240" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -29,7 +29,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="UxaDyxhYECqCGR5hONRQ" name="scene_stage_select">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="480" pageHeight="240" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="480" pageHeight="240" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -52,7 +52,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="8QI9MoBnzNYAVo5cPoQN" name="scene_stage_select_header">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="440" pageHeight="30" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="440" pageHeight="30" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -69,7 +69,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="inqNt7d4LbIKGnadOKXI" name="scene_stage_select_footer">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="440" pageHeight="30" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="440" pageHeight="30" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -100,7 +100,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="oiCTT6sCYqdihkd6QBbx" name="scene_game">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="480" pageHeight="240" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="480" pageHeight="240" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -111,7 +111,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="lGZpffURUDDMZxiGXxeN" name="popup_credit">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="380" pageHeight="190" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="380" pageHeight="190" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -159,7 +159,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="x40SjGNfD1IlElFfaUcV" name="popup_option">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="380" pageHeight="190" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="380" pageHeight="190" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -176,15 +176,21 @@
         </mxGraphModel>
     </diagram>
     <diagram id="T0qIGZrzbNbSS45Af_FC" name="popup_option_page1">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="360" pageHeight="150" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="360" pageHeight="150" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="MZMNTKuuTItcR-k-agHM-1" value="rect_window_size_text" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="50" y="10" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="FrB3z1y8WLAsNb5_CyUW-1" value="rect_window_size_combo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="10" width="120" height="30" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="Y1kg-HW5m_tq5pNVVoeP" name="popup_option_page2">
-        <mxGraphModel dx="1073" dy="523" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="360" pageHeight="150" math="0" shadow="0">
+        <mxGraphModel dx="900" dy="288" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="360" pageHeight="150" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
