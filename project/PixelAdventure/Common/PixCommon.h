@@ -1,27 +1,17 @@
 ﻿#pragma once
-#ifndef PIX_COMMON_H_
-#define PIX_COMMON_H_
-
-#include <Siv3D.hpp>
-
-#include "../Scene/PixSceneData.h"
-#include "../Scene/PixSceneDefine.h"
-
-#ifdef _DEBUG
-
-#define PIX_ASSERT(b) if (!(b)) __debugbreak()
-
-#else
-
-#define PIX_ASSERT(b) (void)(b)
-
-#endif // _DEBUG
-
-
+#include "sip/Common/Common.h"
+#include "sip/Locator/SingletonLocator.h"
+#include "sip/AssetAccessor/AssetAccessor.hpp"
+#include "sip/DrawObject/Base/DrawObjectManager.h"
+#include "sip/LayoutData/LayoutData.h"
+#include "sip/SceneManager/ISceneChanger.h"
 
 namespace pix
 {
-	using SceneManager = s3d::SceneManager<pix::SceneKind, pix::SceneData>;
-}
+	using AssetsAccessor = sip::AssetAccessor<
+		Texture, Font, Audio, sip::layout::Data
+	>;
 
-#endif // !PIX_COMMON_H_
+	using AssetLocator = sip::SingletonLocator<AssetsAccessor>;
+	using SceneChangerLocator = sip::SingletonLocator<sip::ISceneChanger>;
+}

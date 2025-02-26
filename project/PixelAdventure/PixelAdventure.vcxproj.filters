@@ -159,6 +159,60 @@
     <ClCompile Include="Character\PixCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sip\AssetPackage\AssetPackage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\DebugLog\DebugLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\DebugName\DebugName.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\DebugPlayer\DebugPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\DrawObject\Base\DrawObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\DrawObject\Base\DrawObjectManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\DrawObject\DrawScissorRect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\DrawObject\DrawTextureParts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\LayoutData\LayoutData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\Mission\Mission.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\SceneChangeEffect\SceneChangeEffectFade.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sip\SceneManager\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameApp\GameApp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameApp\GameAppStateInit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameApp\GameAppStateLoad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameApp\GameAppStateIdle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\Title\SceneTitle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneChangeEffectCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -824,9 +878,6 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\PixCommon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Scene\PixSceneDefine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -845,16 +896,125 @@
     <ClInclude Include="Parts\Background\PixBackground.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\PixTextureDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Scene\PixScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Character\PixCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Common\PixAnimationInfo.h">
+    <ClInclude Include="sip\AssetAccessor\AssetAccessor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\AssetAccessor\AssetAccessor.ipp" />
+    <ClInclude Include="sip\AssetPackage\AssetPackage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Collision\CollisionFunction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Common\Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Common\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DebugLog\DebugLog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DebugName\DebugName.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DebugPlayer\DebugPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DrawObject\Base\DrawObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DrawObject\Base\DrawObjectManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DrawObject\Base\LayerDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DrawObject\DrawScissorRect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\DrawObject\DrawTextureParts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\LayoutData\LayoutData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Locator\Locator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Locator\SingletonLocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Mission\IMission.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Mission\IMissionCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Mission\IMissionFlag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\Mission\Mission.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneChangeEffect\SceneChangeEffectFade.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneManager\IScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneManager\ISceneChangeEffect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneManager\ISceneChanger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneManager\ISceneCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneManager\SceneBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneManager\SceneDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\SceneManager\SceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sip\StateMachine\StateMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApp\GameApp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApp\GameAppStateInit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApp\GameAppState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApp\GameAppStateLoad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\PixCommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\AssetTextureDefine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameApp\GameAppStateIdle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\Title\SceneTitle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneChangeEffectCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -49,7 +49,7 @@
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\Intermediate\</IntDir>
     <TargetName>$(ProjectName)(debug)</TargetName>
     <LocalDebuggerWorkingDirectory>$(ProjectDir)App</LocalDebuggerWorkingDirectory>
-    <IncludePath>$(SIV3D_0_6_15)\include;$(SIV3D_0_6_15)\include\ThirdParty;$(IncludePath)</IncludePath>
+    <IncludePath>$(SIV3D_0_6_15)\include;$(ProjectDir);$(SIV3D_0_6_15)\include\ThirdParty;$(IncludePath)</IncludePath>
     <LibraryPath>$(SIV3D_0_6_15)\lib\Windows;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -57,7 +57,7 @@
     <OutDir>$(SolutionDir)Intermediate\$(ProjectName)\Release\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Release\Intermediate\</IntDir>
     <LocalDebuggerWorkingDirectory>$(ProjectDir)App</LocalDebuggerWorkingDirectory>
-    <IncludePath>$(SIV3D_0_6_15)\include;$(SIV3D_0_6_15)\include\ThirdParty;$(IncludePath)</IncludePath>
+    <IncludePath>$(SIV3D_0_6_15)\include;$(ProjectDir);$(SIV3D_0_6_15)\include\ThirdParty;$(IncludePath)</IncludePath>
     <LibraryPath>$(SIV3D_0_6_15)\lib\Windows;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -115,12 +115,26 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Character\PixCharacter.cpp" />
+    <ClCompile Include="GameApp\GameAppStateIdle.cpp" />
+    <ClCompile Include="Parts\Background\Background.cpp" />
+    <ClCompile Include="Scene\SceneChangeEffectCreator.cpp" />
+    <ClCompile Include="Scene\Title\SceneTitle.cpp" />
+    <ClCompile Include="sip\AssetPackage\AssetPackage.cpp" />
+    <ClCompile Include="sip\DebugLog\DebugLog.cpp" />
+    <ClCompile Include="sip\DebugName\DebugName.cpp" />
+    <ClCompile Include="sip\DebugPlayer\DebugPlayer.cpp" />
+    <ClCompile Include="sip\DrawObject\Base\DrawObject.cpp" />
+    <ClCompile Include="sip\DrawObject\Base\DrawObjectManager.cpp" />
+    <ClCompile Include="sip\DrawObject\DrawScissorRect.cpp" />
+    <ClCompile Include="sip\DrawObject\DrawTextureParts.cpp" />
+    <ClCompile Include="GameApp\GameApp.cpp" />
+    <ClCompile Include="GameApp\GameAppStateInit.cpp" />
+    <ClCompile Include="GameApp\GameAppStateLoad.cpp" />
+    <ClCompile Include="sip\LayoutData\LayoutData.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Parts\Background\PixBackground.cpp" />
-    <ClCompile Include="Scene\Game\PixSceneGame.cpp" />
-    <ClCompile Include="Scene\PixScene.cpp" />
-    <ClCompile Include="Scene\Title\PixSceneTitle.cpp" />
+    <ClCompile Include="sip\Mission\Mission.cpp" />
+    <ClCompile Include="sip\SceneChangeEffect\SceneChangeEffectFade.cpp" />
+    <ClCompile Include="sip\SceneManager\SceneManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -330,17 +344,47 @@
     <Xml Include="App\example\xml\test.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character\PixCharacter.h" />
-    <ClInclude Include="Common\PixAnimationInfo.h" />
+    <ClInclude Include="Common\AssetLayoutDefine.h" />
+    <ClInclude Include="Common\AssetTextureDefine.h" />
     <ClInclude Include="Common\PixCommon.h" />
-    <ClInclude Include="Common\PixTextureDefine.h" />
-    <ClInclude Include="Parts\Background\PixBackground.h" />
-    <ClInclude Include="Scene\Game\PixSceneGame.h" />
-    <ClInclude Include="Scene\PixScene.h" />
-    <ClInclude Include="Scene\PixSceneData.h" />
-    <ClInclude Include="Scene\PixSceneDefine.h" />
-    <ClInclude Include="Scene\Select\PixSceneSelect.h" />
-    <ClInclude Include="Scene\Title\PixSceneTitle.h" />
+    <ClInclude Include="GameApp\GameAppStateIdle.h" />
+    <ClInclude Include="Parts\Background\Background.h" />
+    <ClInclude Include="Scene\SceneChangeEffectCreator.h" />
+    <ClInclude Include="Scene\Title\SceneTitle.h" />
+    <ClInclude Include="sip\AssetAccessor\AssetAccessor.hpp" />
+    <ClInclude Include="sip\AssetAccessor\AssetAccessor.ipp" />
+    <ClInclude Include="sip\AssetPackage\AssetPackage.h" />
+    <ClInclude Include="sip\Collision\CollisionFunction.h" />
+    <ClInclude Include="sip\Common\Common.h" />
+    <ClInclude Include="sip\Common\Singleton.h" />
+    <ClInclude Include="sip\DebugLog\DebugLog.h" />
+    <ClInclude Include="sip\DebugName\DebugName.h" />
+    <ClInclude Include="sip\DebugPlayer\DebugPlayer.h" />
+    <ClInclude Include="sip\DrawObject\Base\DrawObject.h" />
+    <ClInclude Include="sip\DrawObject\Base\DrawObjectManager.h" />
+    <ClInclude Include="sip\DrawObject\Base\LayerDefine.h" />
+    <ClInclude Include="sip\DrawObject\DrawScissorRect.h" />
+    <ClInclude Include="sip\DrawObject\DrawTextureParts.h" />
+    <ClInclude Include="GameApp\GameApp.h" />
+    <ClInclude Include="GameApp\GameAppState.h" />
+    <ClInclude Include="GameApp\GameAppStateInit.h" />
+    <ClInclude Include="GameApp\GameAppStateLoad.h" />
+    <ClInclude Include="sip\LayoutData\LayoutData.h" />
+    <ClInclude Include="sip\Locator\Locator.h" />
+    <ClInclude Include="sip\Locator\SingletonLocator.h" />
+    <ClInclude Include="sip\Mission\IMission.h" />
+    <ClInclude Include="sip\Mission\IMissionCreator.h" />
+    <ClInclude Include="sip\Mission\IMissionFlag.h" />
+    <ClInclude Include="sip\Mission\Mission.h" />
+    <ClInclude Include="sip\SceneChangeEffect\SceneChangeEffectFade.h" />
+    <ClInclude Include="sip\SceneManager\IScene.h" />
+    <ClInclude Include="sip\SceneManager\ISceneChangeEffect.h" />
+    <ClInclude Include="sip\SceneManager\ISceneChanger.h" />
+    <ClInclude Include="sip\SceneManager\ISceneCreator.h" />
+    <ClInclude Include="sip\SceneManager\SceneBase.h" />
+    <ClInclude Include="sip\SceneManager\SceneDefine.h" />
+    <ClInclude Include="sip\SceneManager\SceneManager.h" />
+    <ClInclude Include="sip\StateMachine\StateMachine.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>

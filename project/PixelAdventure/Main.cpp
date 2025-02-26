@@ -1,35 +1,22 @@
 ﻿# include <Siv3D.hpp> // Siv3D v0.6.15
-
-# include "Common/PixCommon.h"
-# include "Scene/Title/PixSceneTitle.h"
-# include "Scene/Select/PixSceneSelect.h"
-# include "Scene/Game/PixSceneGame.h"
-
+#include "GameApp/GameApp.h"
+#include "Common/PixCommon.h"
 
 void Main()
 {
-	// 各アセットの登録
-	for (const auto& it : pix::TextureFileInfos)
-	{
-		TextureAsset::Register(it.assetKey, it.fileName);
-	}
+	pix::AssetsAccessor assetsAccessor;
+	sip::DrawObjectManager drawObjectManager;
+	pix::GameApp gameApp;
 
-	// シーン管理
-	pix::SceneManager sceneManager;
+	// アセット管理クラスの登録
+	pix::AssetLocator::getInstance().set(&assetsAccessor);
 
-	// シーンの追加
-	sceneManager
-		.add<pix::SceneTitle>(pix::SceneKind::Title)
-		.add<pix::SceneSelect>(pix::SceneKind::Select)
-		.add<pix::SceneGame>(pix::SceneKind::Game);
-
-	// シーンの初期化
-	sceneManager.init(pix::SceneKind::Game, 1s);
-
-
+	// 描画オブジェクト管理クラスの登録
+	sip::SingletonLocator<sip::DrawObjectManager>::getInstance().set(&drawObjectManager);
 
 	while (System::Update())
 	{
-		sceneManager.update();
+		gameApp.update();
+		drawObjectManager.draw();
 	}
 }

@@ -1,0 +1,30 @@
+{
+    "pack_name": "sample",
+    "resources": {
+        "audios": [
+            { "shot" : "example/shot.mp3" }
+        ],
+        "textures" : [
+
+        ],
+        "fonts": [
+
+        ],
+        "v_shaders": [
+
+        ],
+        "p_shaders": [
+
+        ],
+
+        "object3ds": [
+
+        ],
+        "videos": [
+
+        ],
+        "blobs": [
+
+        ]
+    }
+}
