@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+project/PixelAdventure/App/resources/rule_pattern/rule800/
