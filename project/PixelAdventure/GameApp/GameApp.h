@@ -17,6 +17,6 @@ namespace pix
 
 	private:
 
-		sip::StateMachine<GameAppState> m_stateMachine;
+		sip::StateMachine<GameAppState, GameAppData> m_stateMachine;
 	};
 }

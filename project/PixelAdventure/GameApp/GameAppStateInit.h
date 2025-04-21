@@ -4,7 +4,7 @@
 
 namespace pix
 {
-	class GameAppStateInit : public sip::IState<GameAppState>
+	class GameAppStateInit : public StateBase
 	{
 	public:
 

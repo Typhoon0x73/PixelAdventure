@@ -1,4 +1,5 @@
 ﻿#pragma once
+# include <Siv3D.hpp>
 #include "sip/SceneManager/ISceneChangeEffect.h"
 
 namespace pix::SceneChangeEffect

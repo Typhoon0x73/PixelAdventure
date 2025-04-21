@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include <limits>
+#include <Siv3D.hpp>
 #include "sip/DrawObject/Base/DrawObject.h"
 
 namespace pix
@@ -10,7 +12,7 @@ namespace pix
 
 		enum class Kind : size_t
 		{
-			Invalid = -1,
+			Invalid = SIZE_T_MAX,
 
 			Blue = 0,
 			Brown,

@@ -8,4 +8,11 @@ namespace pix
 		Load,
 		Idle,
 	};
+
+    struct GameAppData
+    {
+        
+    };
+    
+    using StateBase = sip::StateBase<GameAppState, GameAppData>;
 }

@@ -8,7 +8,7 @@
 
 namespace sip
 {
-	template<class T>
+	template<class T, class Data>
 	class IState
 	{
 	public:
@@ -16,7 +16,21 @@ namespace sip
 		virtual bool onCreate() = 0;
 		virtual void onUpdate() = 0;
 		virtual void onRelease() = 0;
+		virtual void setData(Data* pData) = 0;
 		virtual Optional<T> getNextState() const = 0;
+	};
+
+	template<class T, class Data>
+	class StateBase : public IState<T, Data>
+	{
+	public:
+		StateBase() = default;
+		virtual ~StateBase() = default;
+		inline virtual void setData(Data* pData) { m_pData = pData; }
+
+	protected:
+
+		Data* m_pData{ nullptr };
 	};
 
 	template<class T>
@@ -40,48 +54,47 @@ namespace sip
 	{
 	public:
 		virtual ~IStateMachine() = default;
+		virtual void init(const T& init) = 0;
 		virtual bool update() = 0;
 	};
 
-	template<class T, class StateBase = IState<T>>
+	template<class T, class Data>
 	class StateMachine : public IStateMachine<T>
 	{
 	public:
 
-		template<class State>
-		class StateCreator : public IStateCreator<StateBase>
+		template<class Impl>
+		class StateCreator : public IStateCreator<StateBase<T, Data>>
 		{
 		public:
-			virtual StateBase* create() override
+			virtual StateBase<T, Data>* create() override
 			{
-				return new State();
+				return new Impl();
 			}
 		};
 
 	public:
 
-		explicit StateMachine() {}
-		virtual ~StateMachine() {}
+		explicit StateMachine() = default;
+		virtual ~StateMachine() = default;
+
+		virtual void init(const T& init) override
+		{
+			m_pData = std::make_unique<Data>();
+			change(init);
+		}
 
 		virtual bool change(const T& next) override
 		{
-			auto creatorItr = m_creatorTable.find(next);
-			if (creatorItr == m_creatorTable.end())
-			{
-				return false;
-			}
-			if (m_pState)
-			{
-				m_pState->onRelease();
-			}
-			m_pState.reset(creatorItr->second->create());
+			createState(next);
+			m_pState->setData(m_pData.get());
 			return m_pState->onCreate();
 		}
 
-		template<class State>
+		template<class Impl>
 		StateMachine& add(const T& state)
 		{
-			m_creatorTable[state] = std::make_unique<StateCreator<State>>();
+			m_creatorTable[state] = std::make_unique<StateCreator<Impl>>();
 			return *this;
 		}
 
@@ -105,8 +118,25 @@ namespace sip
 
 	protected:
 
-		std::unique_ptr<StateBase> m_pState;
-		HashTable<T, std::unique_ptr<IStateCreator<StateBase>>> m_creatorTable;
+		virtual void createState(const T& next)
+		{
+			auto creatorItr = m_creatorTable.find(next);
+			if (creatorItr == m_creatorTable.end())
+			{
+				return;
+			}
+			if (m_pState)
+			{
+				m_pState->onRelease();
+			}
+			m_pState.reset(creatorItr->second->create());
+		}
+
+	protected:
+
+		std::unique_ptr<Data> m_pData{ nullptr };
+		std::unique_ptr<StateBase<T, Data>> m_pState{ nullptr };
+		HashTable<T, std::unique_ptr<IStateCreator<StateBase<T, Data>>>> m_creatorTable{};
 	};
 
 }

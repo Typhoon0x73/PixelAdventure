@@ -32,13 +32,6 @@ namespace pix
 				}
 			}
 
-			auto ps = HLSL{ U"resources/shader/rule_fade.hlsl", U"PS" }
-			| GLSL{ U"resources/shader/rule_fade.frag", {{ U"PSConstants2D", 0 }, { U"RuleFade", 1 } } };
-			PixelShaderAsset::Register(U"rule_fade", ps);
-			if (!PixelShaderAsset::Load(U"rule_fade"))
-			{
-				return -1;
-			}
 			return 0;
 		}
 	}
@@ -85,6 +78,15 @@ namespace pix
 		}
 
 		m_loadTask = Async(LoadFunc);
+        
+        // MAC側でうまく動かなかったのでMainと同じスレッドで読み込み。
+        auto ps = HLSL{ U"resources/shader/rule_fade.hlsl", U"PS" }
+        | GLSL{ U"resources/shader/rule_fade.frag", {{ U"PSConstants2D", 0 }, { U"RuleFade", 1 } } };
+        PixelShaderAsset::Register(U"rule_fade", ps);
+        if (!PixelShaderAsset::Load(U"rule_fade"))
+        {
+            return false;
+        }
 		return true;
 	}
 
